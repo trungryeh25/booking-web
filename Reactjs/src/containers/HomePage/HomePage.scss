@@ -1,0 +1,203 @@
+// Reset slick slider css
+.slick-prev {
+    // border: 1.5px solid grey !important;
+    left: -10 !important;
+    z-index: 1 !important;
+    height: 45px !important;
+    width: 40px !important;
+    background: #ffffff80 !important;
+
+    &:hover {
+        background: #ffffff80 !important;
+    }
+}
+
+.slick-prev::before,
+.slick-next::before {
+    font-family: FontAweSome !important;
+    // content: "\e257" !important;
+    color: grey !important;
+    font-weight: 600;
+}
+
+.slick-next {
+    // border: 1.5px solid grey !important;
+    right: 0 !important;
+    z-index: 1 !important;
+    height: 45px !important;
+    width: 40px !important;
+    background: #ffffff80 !important;
+
+    &:hover {
+        background: #ffffff80 !important;
+    }
+}
+
+.slick-disabled {
+    display: none !important;
+}
+
+.section-share {
+    &.section-specialty {
+        background: #f5f5f5;
+    }
+
+    &.section-outstanding-doctor {
+        background: #f5f5f5;
+    }
+
+    &.section-about {
+        height: 550px;
+        border-top: 1px solid #cdefff40;
+        border-bottom: 1px solid #cdefff40;
+        background-color: #cdefff40;
+    }
+
+    .section-body {
+
+        .section-customize {
+
+            .bg-image {
+                width: 402px;
+                height: 200px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+
+                &.section-specialty {
+                    // background-image: url(../../assets/specialty/co-xuong-khop.jpg) !important;
+                }
+
+                &.section-medical-facility {
+                    background-image: url(../../assets/medical-facility/hospital-1.jpg) !important;
+                }
+
+                &.section-outstanding-doctor {
+                    // background-image: url(../../assets/outstanding-doctor/doctor-1.png) !important;
+                    width: 145px;
+                    height: 145px;
+                    border-radius: 50%;
+                }
+
+                &.section-handbook {
+                    background-image: url(../../assets/handbook/handbook-1.png) !important;
+                }
+            }
+        }
+    }
+
+}
+
+.section-share {
+    height: 330px;
+
+    .section-container {
+        margin: 0 100px;
+        display: flex;
+        flex-direction: column;
+
+        .section-header {
+            height: 60px;
+            margin-bottom: 20px;
+            padding-top: 30px;
+
+            .title-section {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            .btn-section {
+                float: right;
+                padding: 10px 15px;
+                border: none;
+                outline: none;
+                display: block;
+                text-transform: uppercase;
+                background: #ebebeb;
+                color: black;
+                cursor: pointer;
+
+                &:hover {
+                    color: #fff;
+                    background: #f7d800;
+                }
+            }
+        }
+    }
+}
+
+.section-outstanding-doctor {
+    .outer-bg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .section-customize {
+        padding: 5px;
+        // padding-left: 100px;
+        // padding-right: 100px;
+        cursor: pointer;
+
+        .customize-border {
+            // border: 1px solid gray;
+            padding: 20px;
+        }
+
+        .text-center {
+            font-weight: 500;
+            // font-style: italic;
+            font-size: 16px;
+            margin-bottom: 10px;
+
+            &:hover {
+                color: rgba(30, 182, 182, 0.699);
+            }
+        }
+    }
+}
+
+
+
+.home-footer {
+    text-align: center;
+    padding-top: 8px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.section-about {
+    margin: 0 100px;
+
+    .section-about-header {
+        padding: 10px 0;
+        font-size: 21px;
+        font-weight: 600;
+    }
+
+    .section-about-content {
+        display: flex;
+        gap: 15px;
+
+        .content-left {
+            width: 60%;
+        }
+
+        .content-right {
+            width: 40%;
+            padding-top: 15px;
+
+            span {
+                height: 100px;
+                width: 200px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                background-color: #f7d800;
+                border: 1px solid blue;
+            }
+        }
+    }
+}

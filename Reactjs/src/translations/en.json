@@ -1,0 +1,123 @@
+{
+    "homeheader": {
+        "specialty": "Medical specialty",
+        "searchdoctor": "Find a doctor by specialty",
+        "medical-facility": "Medical facility",
+        "select-clinic": "Select clinic",
+        "doctor": "Doctor",
+        "select-doctor": "Select doctor",
+        "medical-package": "Medical package",
+        "general-health-checkup": "General health checkup",
+        "support": "Support",
+        "welcome": "Welcome"
+    },
+
+    "banner": {
+        "base": "MEDICAL FOUNDATION",
+        "comprehensive": "COMPREHENSIVE HEALTHCARE",
+        "specialist-consultation": "Specialist Consultation",
+        "telemedicine": "Telemedicine",
+        "general_check-up": "General Check-up",
+        "test": "Medical Test",
+        "mental_health": "Mental Health",
+        "dentist": "Dental Examination"
+    },
+
+    "menu": {
+        "admin": {
+            "manage-user": "Users System",
+            "manage-doctor": "Manage doctors",
+            "manage-admin": "Manage admins",
+            "crud": "CRUD user",
+            "crud-redux": "CRUD Redux",
+            "clinic": "Clinics",
+            "manage-clinic": "Manage clinics",
+            "specialty": "Specialties",
+            "manage-specialty": "Manage specialties",
+            "handbook": "Handbook",
+            "manage-handbook": "Manage handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Doctor Schedule Management"
+        }
+    },
+
+    "manage-user": {
+        "add": "Create a new user",
+        "infor": "User information",
+        "email": "Email",
+        "password": "Password",
+        "first-name": "First Name",
+        "last-name": "Last Name",
+        "phone-number": "Phone Number",
+        "position": "Position",
+        "gender": "Gender",
+        "role": "Role",
+        "address": "Address",
+        "image": "Avatar",
+        "save": "Save",
+        "update": "Save changes",
+        "uploadImg": "Upload Image"
+    }, 
+    "homepage": {
+        "outstanding-doctor": "Doctors of the week",
+        "more-infor": "More",
+        "specialty": "Popular Specialties"
+    },
+    "manage-schedule": {
+        "title": "Doctor's appointment schedule management",
+        "choose-doctor": "Select doctor",
+        "choose-day": "Select date",
+        "save-schedule": "Save infor"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Schedule",
+            "no-schedule": "Schedule is empty. Please picking up other time.",
+            "choose-booking": "  Selecting and booking (free)  "
+        },
+        "extra-doctor-infor": {
+            "heading-banner": "Address of the clinic",
+            "price": "Price",
+            "fee": "Fee",
+            "more-infor": "Read more",
+            "method": "Payment",
+            "hide-i": "Hide"
+        },
+        "booking-modal":{
+            "title": "Appointment booking information",
+            "fullName": "Full Name",
+            "phoneNumber": "Phonenumber",
+            "email": "Email",
+            "sex": "Gender",
+            "birthday": "Date of Birth",
+            "reason": "Reason",
+            "confirm": "Confirm",
+            "priceBooking": "Free booking",
+            "price-title": "Price"
+        }
+    },
+    "admin":{
+        "manage-doctor": {
+            "title": "Doctor's Information management",
+            "select-doctor": "Select doctor",
+            "intro": "Introduction",
+            "select-doctor-input": "Select ..",
+            "price": "Select price",
+            "price-input": "Price..",
+            "payment-method": "Payment Method",
+            "payment-method-input": "Method..",
+            "select-province": "Select province",
+            "select-province-input": "Select ..",
+            "nameClinic": "Clinic",
+            "addressClinic": "Address",
+            "note": "Notes",
+            "create": "Create",
+            "save-change": "Save Changes",
+            "specialty": "Select Specialty",
+            "specialty-input": "Choose..",
+            "clinic": "Select Clinic",
+            "clinic-input": "Choose.."
+        }
+    }
+}

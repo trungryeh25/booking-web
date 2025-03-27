@@ -1,0 +1,11 @@
+.specialty-box {
+    cursor: pointer;
+
+    .specialty-name {
+        padding: 10px 0;
+
+        &:hover {
+            color: rgba(86, 86, 202, 0.774);
+        }
+    }
+}
