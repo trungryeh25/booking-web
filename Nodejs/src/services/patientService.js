@@ -21,7 +21,11 @@ let postBookingAppointment = (data) => {
       ) {
         resolve({
           errCode: 1,
+<<<<<<< HEAD
           errMessage: "Missing parameter 3",
+=======
+          errMessage: "Missing parameter",
+>>>>>>> origin/master
         });
       } else {
         let token = uuidv4();
@@ -76,7 +80,11 @@ let postVerifyBookingAppointment = (data) => {
       if (!data.token || !data.doctorId) {
         resolve({
           errCode: 1,
+<<<<<<< HEAD
           errMessage: "Missing parameter 4",
+=======
+          errMessage: "Missing parameter",
+>>>>>>> origin/master
         });
       } else {
         let appointment = await db.Booking.findOne({

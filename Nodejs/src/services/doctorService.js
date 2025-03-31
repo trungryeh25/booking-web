@@ -1,5 +1,9 @@
 import db from "../models/index";
+<<<<<<< HEAD
 import _ from "lodash";
+=======
+import _, { includes, reject } from "lodash";
+>>>>>>> origin/master
 
 require("dotenv").config();
 
@@ -75,7 +79,10 @@ let checkRequiredFields = (inputData) => {
     "addressClinic",
     "note",
     "specialtyId",
+<<<<<<< HEAD
     "clinicId",
+=======
+>>>>>>> origin/master
   ];
 
   let isValid = true;
@@ -97,10 +104,17 @@ let saveDetailInforDoctor = (inputData) => {
   return new Promise(async (resolve, reject) => {
     try {
       let checkObj = checkRequiredFields(inputData);
+<<<<<<< HEAD
       if (checkObj.isValid === false) {
         resolve({
           errCode: 1,
           errMessage: `Missing parameter 1: ${checkObj.element}`,
+=======
+      if (checkObj.isValid === true) {
+        resolve({
+          errCode: 1,
+          errMessage: `Missing parameter: ${checkObj.element}`,
+>>>>>>> origin/master
         });
       } else {
         // actions with Markdown
@@ -178,7 +192,11 @@ let getDetailDoctorById = (inputId) => {
       if (!inputId) {
         resolve({
           errCode: 1,
+<<<<<<< HEAD
           errMessage: "Missing parameter 2",
+=======
+          errMessage: "Missing parameter",
+>>>>>>> origin/master
         });
       } else {
         let data = await db.User.findOne({

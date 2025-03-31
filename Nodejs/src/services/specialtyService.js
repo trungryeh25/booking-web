@@ -37,7 +37,11 @@ let createSpecialty = (data) => {
 let getAllSpecialty = () => {
   return new Promise(async (resolve, reject) => {
     try {
+<<<<<<< HEAD
       let data = await db.Specialty.findAll({});
+=======
+      let data = await db.Specialty.findAll();
+>>>>>>> origin/master
       if (data && data.length > 0) {
         data.map((item) => {
           item.image = new Buffer(item.image, "base64").toString("binary");
@@ -55,6 +59,7 @@ let getAllSpecialty = () => {
   });
 };
 
+<<<<<<< HEAD
 let getDetailSpecialtyById = (inputId, location) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -100,4 +105,9 @@ module.exports = {
   createSpecialty: createSpecialty,
   getAllSpecialty: getAllSpecialty,
   getDetailSpecialtyById: getDetailSpecialtyById,
+=======
+module.exports = {
+  createSpecialty: createSpecialty,
+  getAllSpecialty: getAllSpecialty,
+>>>>>>> origin/master
 };

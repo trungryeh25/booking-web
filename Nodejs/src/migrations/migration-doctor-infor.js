@@ -20,10 +20,18 @@ module.exports = {
       },
       specialtyId: {
         type: Sequelize.INTEGER,
+<<<<<<< HEAD
       },
       clinicId: {
         type: Sequelize.INTEGER,
         allowNull: true,
+=======
+        // allowNull: false,
+      },
+      clinicId: {
+        type: Sequelize.INTEGER,
+        // allowNull: false,
+>>>>>>> origin/master
       },
       priceId: {
         type: Sequelize.STRING,
