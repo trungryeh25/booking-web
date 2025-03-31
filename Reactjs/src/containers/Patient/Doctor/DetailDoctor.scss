@@ -1,0 +1,111 @@
+.detail-doctor-container {
+    height: 500px;
+
+
+    .intro-doctor {
+        display: flex;
+        margin: 20px 0;
+        padding-bottom: 10px;
+
+        .content-left {
+            background: center center no-repeat;
+            background-size: cover;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 80px;
+        }
+
+        .content-right {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+            border-bottom: 1px solid #ddd;
+
+            .up {
+                font-size: 32px;
+                font-weight: 600;
+                padding-top: 12px;
+            }
+
+            .down {
+                padding-top: 10px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .schedule-doctor {
+        margin: 0 100px;
+        display: flex;
+        height: auto;
+        border-bottom: 1.2px solid #ddd;
+        min-height: 150px;
+
+        .content-left {
+            width: 50%;
+            border-left: 1.5px solid #ddd;
+            border-right: 1.5px solid #ddd;
+        }
+
+        .content-right {
+            width: 50%;
+            border-right: 1.5px solid #ddd;
+        }
+    }
+
+    .detail-infor-doctor {
+        padding-top: 25px;
+        margin: 0 100px;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid grey;
+        font-size: 16px;
+
+        h3 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        ul,
+        ol {
+            margin-top: 15px;
+            margin-bottom: 30px;
+            margin-left: 30px;
+            font-size: 16px;
+
+            li {
+                margin: 5px;
+            }
+        }
+
+        h4 {
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        p {
+            margin-bottom: 15px;
+            margin-left: 50px;
+            // padding-bottom: 15px;
+
+            img {
+                width: 30%;
+                height: 30%;
+                position: relative;
+                margin-left: 1%;
+                margin-top: 25px;
+            }
+        }
+
+    }
+
+    .feedback-doctor {
+        height: 200px;
+    }
+}

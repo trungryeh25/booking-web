@@ -1,0 +1,35 @@
+.manage-schedule-container {
+
+    .m-s-title {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 24px;
+        color: #0071ba;
+    }
+
+    .pick-hour-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 20px 0;
+
+        .btn-schedule {
+            padding: 5px 15px;
+            border: 1px solid grey;
+            border-radius: 7px;
+            background-color: white;
+
+            &.active {
+                background-color: gray;
+                color: white;
+            }
+        }
+    }
+
+    .btn-save-schedule {
+        margin-top: 20px;
+        width: 120px;
+    }
+}
