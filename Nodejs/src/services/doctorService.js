@@ -1,5 +1,5 @@
 import db from "../models/index";
-import _, { includes, reject } from "lodash";
+import _ from "lodash";
 
 require("dotenv").config();
 
