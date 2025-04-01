@@ -1,10 +1,5 @@
 import db from "../models/index";
-<<<<<<< HEAD
 import _ from "lodash";
-=======
-import _, { includes, reject } from "lodash";
->>>>>>> origin/master
-
 require("dotenv").config();
 
 const MAX_NUMBER_SCHEDULE = process.env.MAX_NUMBER_SCHEDULE;
@@ -79,10 +74,7 @@ let checkRequiredFields = (inputData) => {
     "addressClinic",
     "note",
     "specialtyId",
-<<<<<<< HEAD
     "clinicId",
-=======
->>>>>>> origin/master
   ];
 
   let isValid = true;
@@ -104,81 +96,82 @@ let saveDetailInforDoctor = (inputData) => {
   return new Promise(async (resolve, reject) => {
     try {
       let checkObj = checkRequiredFields(inputData);
-<<<<<<< HEAD
+
       if (checkObj.isValid === false) {
         resolve({
           errCode: 1,
           errMessage: `Missing parameter 1: ${checkObj.element}`,
-=======
-      if (checkObj.isValid === true) {
-        resolve({
-          errCode: 1,
-          errMessage: `Missing parameter: ${checkObj.element}`,
->>>>>>> origin/master
         });
-      } else {
-        // actions with Markdown
-        if (inputData.action === "CREATE") {
-          await db.Markdown.create({
-            contentHTML: inputData.contentHTML,
-            contentMarkdown: inputData.contentMarkdown,
-            description: inputData.description,
-            doctorId: inputData.doctorId,
+
+        if (checkObj.isValid === true) {
+          resolve({
+            errCode: 1,
+            errMessage: `Missing parameter: ${checkObj.element}`,
           });
-        } else if (inputData.action === "UPDATE") {
-          let doctorMarkdown = await db.Markdown.findOne({
-            where: { doctorId: inputData.doctorId },
+        } else {
+          // actions with Markdown
+          if (inputData.action === "CREATE") {
+            await db.Markdown.create({
+              contentHTML: inputData.contentHTML,
+              contentMarkdown: inputData.contentMarkdown,
+              description: inputData.description,
+              doctorId: inputData.doctorId,
+            });
+          } else if (inputData.action === "UPDATE") {
+            let doctorMarkdown = await db.Markdown.findOne({
+              where: { doctorId: inputData.doctorId },
+              raw: false,
+            });
+
+            if (doctorMarkdown) {
+              doctorMarkdown.contentHTML = inputData.contentHTML;
+              doctorMarkdown.contentMarkdown = inputData.contentMarkdown;
+              doctorMarkdown.description = inputData.description;
+
+              await doctorMarkdown.save();
+            }
+          }
+
+          // action with doctor_infor table
+          let doctorInfor = await db.Doctor_Infor.findOne({
+            where: {
+              doctorId: inputData.doctorId,
+            },
             raw: false,
           });
 
-          if (doctorMarkdown) {
-            doctorMarkdown.contentHTML = inputData.contentHTML;
-            doctorMarkdown.contentMarkdown = inputData.contentMarkdown;
-            doctorMarkdown.description = inputData.description;
-
-            await doctorMarkdown.save();
+          if (doctorInfor) {
+            // update
+            doctorInfor.doctorId = inputData.doctorId;
+            doctorInfor.priceId = inputData.selectedPrice;
+            doctorInfor.paymentId = inputData.selectedPayment;
+            doctorInfor.provinceId = inputData.selectedProvince;
+            doctorInfor.nameClinic = inputData.nameClinic;
+            doctorInfor.addressClinic = inputData.addressClinic;
+            doctorInfor.note = inputData.note;
+            doctorInfor.specialtyId = inputData.specialtyId;
+            doctorInfor.clinicId = inputData.clinicId;
+            await doctorInfor.save();
+          } else {
+            // create
+            await db.Doctor_Infor.create({
+              doctorId: inputData.doctorId,
+              priceId: inputData.selectedPrice,
+              paymentId: inputData.selectedPayment,
+              provinceId: inputData.selectedProvince,
+              nameClinic: inputData.nameClinic,
+              addressClinic: inputData.addressClinic,
+              note: inputData.note,
+              specialtyId: inputData.specialtyId,
+              clinicId: inputData.clinicId,
+            });
           }
-        }
 
-        // action with doctor_infor table
-        let doctorInfor = await db.Doctor_Infor.findOne({
-          where: {
-            doctorId: inputData.doctorId,
-          },
-          raw: false,
-        });
-
-        if (doctorInfor) {
-          // update
-          doctorInfor.doctorId = inputData.doctorId;
-          doctorInfor.priceId = inputData.selectedPrice;
-          doctorInfor.paymentId = inputData.selectedPayment;
-          doctorInfor.provinceId = inputData.selectedProvince;
-          doctorInfor.nameClinic = inputData.nameClinic;
-          doctorInfor.addressClinic = inputData.addressClinic;
-          doctorInfor.note = inputData.note;
-          doctorInfor.specialtyId = inputData.specialtyId;
-          doctorInfor.clinicId = inputData.clinicId;
-          await doctorInfor.save();
-        } else {
-          // create
-          await db.Doctor_Infor.create({
-            doctorId: inputData.doctorId,
-            priceId: inputData.selectedPrice,
-            paymentId: inputData.selectedPayment,
-            provinceId: inputData.selectedProvince,
-            nameClinic: inputData.nameClinic,
-            addressClinic: inputData.addressClinic,
-            note: inputData.note,
-            specialtyId: inputData.specialtyId,
-            clinicId: inputData.clinicId,
+          resolve({
+            errCode: 0,
+            errMessage: "Save success!",
           });
         }
-
-        resolve({
-          errCode: 0,
-          errMessage: "Save success!",
-        });
       }
     } catch (e) {
       reject(e);
@@ -192,11 +185,8 @@ let getDetailDoctorById = (inputId) => {
       if (!inputId) {
         resolve({
           errCode: 1,
-<<<<<<< HEAD
           errMessage: "Missing parameter 2",
-=======
           errMessage: "Missing parameter",
->>>>>>> origin/master
         });
       } else {
         let data = await db.User.findOne({

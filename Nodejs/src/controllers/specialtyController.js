@@ -26,7 +26,6 @@ let getAllSpecialty = async (req, res) => {
   }
 };
 
-<<<<<<< HEAD
 let getDetailSpecialtyById = async (req, res) => {
   try {
     let infor = await specialtyService.getDetailSpecialtyById(
@@ -47,9 +46,4 @@ module.exports = {
   createSpecialty: createSpecialty,
   getAllSpecialty: getAllSpecialty,
   getDetailSpecialtyById: getDetailSpecialtyById,
-=======
-module.exports = {
-  createSpecialty: createSpecialty,
-  getAllSpecialty: getAllSpecialty
->>>>>>> origin/master
 };
