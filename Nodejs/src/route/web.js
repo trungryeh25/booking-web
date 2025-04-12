@@ -9,6 +9,7 @@ import clinicController from "../controllers/clinicController";
 let router = express.Router();
 
 let initWebRoutes = (app) => {
+  // homeController
   router.get("/", homeController.getHomePage);
   router.get("/about", homeController.getAboutPage);
   router.get("/crud", homeController.getCRUD);
@@ -18,6 +19,7 @@ let initWebRoutes = (app) => {
   router.post("/put-crud", homeController.putCRUD);
   router.get("/delete-crud", homeController.deleteCRUD);
 
+  // userController
   router.post("/api/login", userController.handleLogin);
   router.get("/api/get-all-users", userController.handleGetAllUsers);
   router.post("/api/create-new-user", userController.handleCreateNewUser); // create user api
@@ -26,6 +28,7 @@ let initWebRoutes = (app) => {
 
   router.get("/api/allcode", userController.getAllCode);
 
+  // doctorController
   router.get("/api/top-doctor-home", doctorController.getTopDoctor); // get top doctor a week
   router.get("/api/get-all-doctors", doctorController.getAllDoctors); // get all doctor
   router.post("/api/save-infor-doctors", doctorController.postInforDoctor); // save infor doctor
@@ -47,6 +50,10 @@ let initWebRoutes = (app) => {
     doctorController.getProfileDoctorById
   ); // get profile a doctor by id
 
+  router.get("/api/get-list-patient-for-doctor", doctorController.getListPatient4Doctor);
+  router.post("/api/send-remedy", doctorController.sendRemedy);
+
+  // patientController
   router.post(
     "/api/patient-booking-appointment",
     patientController.postBookingAppointment
@@ -67,8 +74,8 @@ let initWebRoutes = (app) => {
 
   // clinic
   router.post("/api/create-new-clinic", clinicController.createClinic); // Create a new clinic
-  // router.get("/api/get-all-clinic", clinicController.getAllClinic); // Get all clinic
-  // router.get("/api/get-detail-clinic-by-id", clinicController.getDetailClinicById); // Get all clinic
+  router.get("/api/get-all-clinic", clinicController.getAllClinic); // Get all clinic
+  router.get("/api/get-detail-clinic-by-id", clinicController.getDetailClinicById); // Get all clinic 
 
   return app.use("/", router);
 };

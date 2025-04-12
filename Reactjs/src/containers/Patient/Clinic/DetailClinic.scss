@@ -1,0 +1,114 @@
+.detail-specialty-container {
+
+    .detail-specialty-body {
+        padding: 0 100px;
+        background-color: #eeeeee;
+
+        .description-specialty {
+            border: 2px solid #f7f4f4;
+            height: fit-content;
+            padding-top: 20px;
+            margin-bottom: 35px;
+            background-color: white !important;
+
+            h2,
+            h3,
+            h4 {
+                margin-left: 15px;
+                font-size: 18px;
+                font-weight: 570;
+                text-transform: uppercase;
+            }
+
+            p {
+                margin-left: 25px;
+                font-size: 16px;
+                font-weight: 50;
+                margin-bottom: 20px;
+
+                img {
+                    margin-left: 25%;
+                }
+            }
+
+            ul {
+                margin-left: 25px;
+                font-size: 16px;
+                font-style: italic;
+                font-weight: 50;
+            }
+        }
+
+        .search-sp-doctor {
+            select {
+                height: 40px;
+                width: 170px;
+                padding: 10px 14px;
+                color: #337ab7;
+                border: none;
+                outline: none;
+                border-radius: 6px;
+                font-size: 16px;
+                font-style: italic;
+                cursor: pointer;
+            }
+        }
+
+        .doctor-specialty {
+            display: flex;
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            background-color: white !important;
+
+            .content-d-left {
+                width: 50%;
+                border: 2px solid #f7f4f4;
+                border-radius: 5px;
+
+                .profile-doctor {
+                    margin-left: 15px;
+
+                    .content-right {
+                        border-bottom: none !important;
+
+                        .up {
+                            font-size: 20px !important;
+                            font-weight: 575 !important;
+                            margin-left: 8px !important;
+                        }
+
+                        .down {
+                            font-size: 17px !important;
+                            height: auto !important;
+                            border: 1px solid #f3f3f3;
+                            border-radius: 6px;
+                            margin-left: 10px !important;
+
+                            span {
+                                height: auto !important;
+                                font-size: 14px !important;
+                            }
+                        }
+
+                    }
+
+                    .view-detail-doctor {
+                        a {
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .content-d-right {
+                width: 50%;
+                border: 2px solid #f7f4f4;
+                border-radius: 5px;
+
+            }
+        }
+    }
+
+}

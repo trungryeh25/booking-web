@@ -38,7 +38,8 @@
             "manage-handbook": "Manage handbook"
         },
         "doctor": {
-            "manage-schedule": "Doctor Schedule Management"
+            "manage-schedule": "Doctor Schedule Management",
+            "manage-patient": "Patient Schedule Management"
         }
     },
 
@@ -91,6 +92,7 @@
             "email": "Email",
             "sex": "Gender",
             "birthday": "Date of Birth",
+            "address": "Address",
             "reason": "Reason",
             "confirm": "Confirm",
             "priceBooking": "Free booking",

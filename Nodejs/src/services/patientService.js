@@ -9,22 +9,48 @@ let buildUrlEmail = (doctorId, token) => {
   return result;
 };
 
+let checkRequiredFields = (inputData) => {
+  let arrFields = [
+    "email",
+    "doctorId",
+    "timeType",
+    "date",
+    "fullName",
+    "selectedGender",
+    "address",
+  ];
+
+  let isValid = true;
+  let element = "";
+  for (let i = 0; i < arrFields.length; i++) {
+    if (!inputData[arrFields[i]]) {
+      isValid = false;
+      element = arrFields[i];
+      break;
+    }
+  }
+  return {
+    isValid: isValid,
+    element: element,
+  };
+};
+
 let postBookingAppointment = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
+      let checkObj = checkRequiredFields(data);
       if (
         !data.email ||
         !data.doctorId ||
         !data.timeType ||
         !data.date ||
-        !data.fullName
+        !data.fullName ||
+        !data.selectedGender ||
+        !data.address
       ) {
         resolve({
           errCode: 1,
-
-          errMessage: "Missing parameter 3",
-
-          errMessage: "Missing parameter",
+          errMessage: `Missing parameter: ${checkObj.element}`,
         });
       } else {
         let token = uuidv4();
@@ -42,6 +68,9 @@ let postBookingAppointment = (data) => {
           defaults: {
             email: data.email,
             roleId: "R3",
+            gender: data.selectedGender,
+            address: data.address,
+            firstName: data.fullName,
           },
         });
 
@@ -79,9 +108,6 @@ let postVerifyBookingAppointment = (data) => {
       if (!data.token || !data.doctorId) {
         resolve({
           errCode: 1,
-
-          errMessage: "Missing parameter 4",
-
           errMessage: "Missing parameter",
         });
       } else {

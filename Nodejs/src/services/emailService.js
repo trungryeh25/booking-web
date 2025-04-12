@@ -52,6 +52,65 @@ let getBodyHTMLEmail = (dataSend) => {
   return result;
 };
 
+let sendAttachment = async (dataSend) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.EMAIL_APP,
+          pass: process.env.EMAIL_APP_PASSWORD,
+        },
+      });
+
+      let infor = await transporter.sendMail({
+        from: '"trgn312" <trungnt48376@gm.com>',
+        to: dataSend.email,
+        subject: "Kết quả đặt lịch khám bệnh",
+        html: getBodyHTMLEmailRemedy(dataSend),
+        attachments: [
+          {
+            // encoded string as an attachment
+            filename: `remedy-${dataSend.patientId}-${new Date().getTime()}.jpg`,
+            content: dataSend.imgBase64.split("base64,")[1],
+            encoding: "base64",
+          },
+        ],
+      });
+      resolve();
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+let getBodyHTMLEmailRemedy = (dataSend) => {
+  let result = "";
+  if (dataSend.language === "vi") {
+    result = `
+        <h3>Xin chào ${dataSend.patientName}</h3>
+        <p>Bạn đã đặt lịch thành công trên TRGN312.bookingcare. <br>
+        Thông tin đơn thuốc/hóa đơn được gửi trong tệp đính kèm. <br>
+        Xin chân thành cảm ơn.  
+        </p>
+    `;
+  }
+  if (dataSend.language === "en") {
+    result = `
+        <h3>Dear ${dataSend.patientName}</h3>
+        <p>You have successfully booked an appointment on TRGN312.bookingcare. <br>
+            The prescription/invoice details are included in the attached file. <br>
+            Thank you very much.  
+        </p>
+
+    `;
+  }
+  return result;
+};
+
 module.exports = {
   sendASimple: sendASimple,
+  sendAttachment: sendAttachment,
 };

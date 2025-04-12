@@ -139,8 +139,9 @@ class BookingModal extends Component {
       email: this.state.email,
       address: this.state.address,
       reason: this.state.reason,
-      selectedGenders: this.state.selectedGender.value,
-      date: date,
+      selectedGender: this.state.selectedGender.value,
+      date: this.props.dataTime.date,
+      birthday: date,
       doctorId: this.state.doctorId,
       timeType: this.state.timeType,
       language: this.props.language,
@@ -152,7 +153,7 @@ class BookingModal extends Component {
       toast.success("Booking a new appointment.");
       this.props.isCloseModal();
     } else {
-      toast.error("Failed.");
+      toast.error("Failed. Can't booking.");
     }
   };
 
@@ -160,6 +161,7 @@ class BookingModal extends Component {
     // toggle={}
     let { isOpenModal, isCloseModal, dataTime } = this.props;
     let doctorId = dataTime && !_.isEmpty(dataTime) ? dataTime.doctorId : "";
+    console.log("check state patient booking: ", this);
 
     return (
       <Modal
@@ -247,11 +249,23 @@ class BookingModal extends Component {
               </div>
               <div className="col-12 mb-3 form-group">
                 <label>
+                  <FormattedMessage id="patient.booking-modal.address" />
+                </label>
+                <input
+                  className="form-control"
+                  value={this.address}
+                  onChange={(event) =>
+                    this.handleOnChangeInput(event, "address")
+                  }
+                />
+              </div>
+              <div className="col-12 mb-3 form-group">
+                <label>
                   <FormattedMessage id="patient.booking-modal.reason" />
                 </label>
                 <input
                   className="form-control"
-                  value={this.fullName}
+                  value={this.reason}
                   onChange={(event) =>
                     this.handleOnChangeInput(event, "reason")
                   }

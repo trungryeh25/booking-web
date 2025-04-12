@@ -120,7 +120,7 @@ class HomeHeader extends Component {
               </div>
               <div className="search">
                 <i className="fas fa-search"></i>
-                <input type="text" placeholder="___" />
+                <input type="text" placeholder="Find everything" />
               </div>
             </div>
             <div className="content-down">

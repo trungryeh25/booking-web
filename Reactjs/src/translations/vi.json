@@ -38,7 +38,8 @@
             "manage-handbook": "Quản lý cẩm nang"
         },
         "doctor": {
-            "manage-schedule": "Quản lý lịch khám"
+            "manage-schedule": "Quản lý lịch khám",
+            "manage-patient": "Quản lý lịch khám bệnh nhân"
         }
     },
 
@@ -74,7 +75,7 @@
         "detail-doctor": {
             "schedule": "Lịch khám",
             "no-schedule": "Lịch khám trống. Vui lòng chọn khoảng thời gian khám khác.",
-            "choose-booking": "  Chọn và đặt (miễn phí)  "
+            "choose-booking": "  Chọn và đặt lịch (miễn phí)  "
         },
         "extra-doctor-infor": {
             "heading-banner": "Địa chỉ phòng khám",
@@ -91,6 +92,7 @@
             "email": "Email",
             "sex": "Giới tính",
             "birthday": "Ngày sinh",
+            "address": "Địa chỉ",
             "reason": "Lí do khám",
             "confirm": "Xác nhận",
             "priceBooking": "Miễn phí đặt lịch",

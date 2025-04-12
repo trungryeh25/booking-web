@@ -3,12 +3,11 @@ import { connect } from "react-redux";
 import "./ManageSchedule.scss";
 import * as actions from "../../../store/actions";
 import { FormattedMessage } from "react-intl";
-import { CRUD_ACTIONS, LANGUAGES, dateFormat } from "../../../utils";
+import { LANGUAGES } from "../../../utils";
 import Select from "react-select";
 import DatePicker from "../../../components/Input/DatePicker";
-import moment from "moment";
 import { toast } from "react-toastify";
-import _, { range } from "lodash";
+import _ from "lodash";
 import { saveBulkScheduleDoctor } from "../../../services/userService";
 
 class ManageSchedule extends Component {
@@ -134,7 +133,7 @@ class ManageSchedule extends Component {
     });
 
     if (res && res.errCode === 0) {
-      toast.success("Saving success")
+      toast.success("Saving success");
     } else {
       toast.error("error Save-Bulk-Schedule-Doctor");
       console.log("error Save-Bulk-Schedule-Doctor >>> res: ", res);
@@ -145,7 +144,7 @@ class ManageSchedule extends Component {
     console.log("check doctor schedule state: ", this.state);
     let { rangeTime } = this.state;
     let { language } = this.props;
-    let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+    let yesterday = new Date(new Date().setDate(new Date().getDate()));
     return (
       <div className="manage-schedule-container">
         <div className="m-s-title">
